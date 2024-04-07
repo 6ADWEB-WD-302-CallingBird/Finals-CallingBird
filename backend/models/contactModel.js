@@ -9,7 +9,7 @@ var contactSchema = new Schema({
     },
     contactList: [{ 
             contactname: String,
-            contactnumber: Number,
+            contactnumber: String,
             contactemail: String
     }]
 });

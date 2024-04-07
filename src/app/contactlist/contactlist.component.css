@@ -1,0 +1,49 @@
+#container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background: linear-gradient(to top left, rgb(199, 176, 189),white);
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(135deg, #5D457A , #9C78C8);
+    color: white;
+    align-items: center;
+    padding: 0 20px;
+}
+.nav img {
+    height: 100%;
+}
+
+.links {
+    display: flex;
+    height: 100%;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.links a{
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.3em;
+    cursor: pointer;
+    
+
+}
+
+.links a:visited {
+    color: white;
+}
+
+.contactcontents {
+    display: flex;
+    height: 90vh;
+}

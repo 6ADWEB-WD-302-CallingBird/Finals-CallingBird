@@ -7,6 +7,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactlistComponent } from './contactlist/contactlist.component';
 import { AddcontactComponent } from './addcontact/addcontact.component';
 import { UpdatecontactComponent } from './updatecontact/updatecontact.component';
+
 const routes: Routes = [
   {
   path: 'aboutus', component:AboutusComponent

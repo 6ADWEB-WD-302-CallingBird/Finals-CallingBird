@@ -26,6 +26,8 @@ let data = {
 
 this.http.post('http://127.0.0.1:2929/user/login',data).subscribe((resultData:any) => {
 
+localStorage.setItem('email',data.email);
+
   if (resultData.status) {
     this.router.navigateByUrl('/contacts',{
       skipLocationChange: true,
