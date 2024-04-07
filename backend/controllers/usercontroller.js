@@ -4,10 +4,7 @@ var createUserControllerFn = async (req, res) =>
 {
     try
     {
-    console.log(req.body);
     var status = await userService.createService(req.body);
-    console.log(status);
-
 
     if (status) {
         res.send({ "status": true, "message": "User created successfully" });

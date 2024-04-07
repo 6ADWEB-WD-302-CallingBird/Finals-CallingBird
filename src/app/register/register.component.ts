@@ -33,7 +33,7 @@ constructor(private router: Router,private http: HttpClient){}
 
 validationemail:boolean = false;
 
-async register() {
+register() {
 
   this.http.get(`http://127.0.0.1:2929/user/find/${this.email}`).subscribe( res => {
     if (res) {
@@ -99,7 +99,8 @@ async register() {
         this.status = 'Password Need an Uppercase';
       this.colorstatus = 'red';
       }
-      else if (this.digitcount >= 1 && this.bigalphabet >= 1 && this.symbolcount >=1 && this.password.length >= 8 && this.password == this.password2 && this.validationemail) {
+      else if (this.digitcount >= 1 && this.bigalphabet >= 1 && this.symbolcount >=1 && this.password.length >= 8 && this.password == this.password2 && this.validationemail) 
+      {
         
         let data = {
           'firstname' : this.firstname,
@@ -108,18 +109,21 @@ async register() {
           'password' : this.password,
         };
       
+
       this.http.post("http://127.0.0.1:2929/user/create",data).subscribe((resultData:any)=> {
         if(resultData) {
           alert('Account Created!');
-          this.colorstatus = 'green';
           this.router.navigateByUrl('/login',{
             skipLocationChange: true,
           })
-    
+
         }
-        
+
+ 
       });
+
       }
+
     else {
       this.status = 'ERROR! CONNECTING TO SERVER';
       this.colorstatus = 'red';

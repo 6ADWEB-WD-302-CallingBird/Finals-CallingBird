@@ -1,4 +1,6 @@
 var userModel = require('../models/userModel');
+var contactModel = require('../models/contactModel');
+
 var key = 'pleasedonthaveomgomgomg123456789';
 var encryptor = require('simple-encryptor')(key);
 var mongoose = require('mongoose');
@@ -13,6 +15,7 @@ module.exports.createService = (userDetails) => {
    return new Promise(function myFn(resolve, reject) {
 
        var userModelData = new userModel();
+       var contactModelData = new contactModel();
 
        userModelData.firstname = userDetails.firstname;
        userModelData.lastname = userDetails.lastname;
@@ -20,14 +23,27 @@ module.exports.createService = (userDetails) => {
        var encrypted = encryptor.encrypt(userDetails.password);
        userModelData.password = encrypted;
 
-       userModelData.save(function resultHandle(error, result) {
 
-           if (error) {
-               reject(false);
-           } else {
-               resolve(true);
-           }
-       });
+       contactModelData.email = userDetails.email;
+
+       contactModelData.save(function resultHandle(error, result) {
+
+         if (error) {
+             reject(false);
+         } else {
+
+            userModelData.save(function resultHandle(error, result) {
+
+               if (error) {
+                   reject(false);
+               } else {
+                   resolve(true);
+               }
+           });
+             
+         }
+     });
+      
 
    });
 
@@ -95,7 +111,6 @@ module.exports.findOneService = (email) => {
       reject('No Email')
    }
    else {
-      console.log(result)
       if (result == null) {
       resolve(false)
       }
