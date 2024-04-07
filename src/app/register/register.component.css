@@ -1,0 +1,68 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+#container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(to top left, rgb(100, 60, 83),white);
+}
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+
+ .inputs {
+    width: 80%;
+ }
+
+.red {
+    color: rgb(214, 170, 179);
+}
+
+.green {
+    color: rgb(193, 199, 224);
+}
+
+.card {
+  display: flex;
+  
+  background: linear-gradient(135deg, #5D457A , #9C78C8);
+
+  flex-direction: column;
+  height: 90%;
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px 1px black;
+  
+}
+.card form {
+  text-align: center;
+}
+
+img {
+  height: 10%;
+}

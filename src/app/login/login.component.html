@@ -1,0 +1,33 @@
+<div id='container'>
+
+    <div class="card">
+      <img src="../../assets/birdnobg.png">
+      <h1>Login Your Account</h1> <br>
+   
+<form (ngSubmit)="login()">
+   
+      <mat-form-field class="inputs">
+    <mat-label>Email</mat-label>
+        <input matInput type="email" required [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+
+    
+        <mat-form-field class="inputs">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required [(ngModel)]="password" [ngModelOptions]="{standalone: true}" >
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <br>
+      
+      <button mat-flat-button color="primary" type="submit" >Login</button>
+
+    </form>
+
+    <br> <br>
+
+    <h2 [class]="colorstatus"> {{status}}</h2>
+
+</div>
+</div>
