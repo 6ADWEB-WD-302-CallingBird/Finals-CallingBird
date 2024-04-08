@@ -32,7 +32,7 @@ export class AddcontactComponent {
     }
     else 
     {
-    this.http.put(`http://127.0.0.1:2929/user/addcontact/${this.curremail}`,data).subscribe((resultData:any)=> {
+    this.http.put(`http://127.0.0.1:2929/contacts/addcontact/${this.curremail}`,data).subscribe((resultData:any)=> {
       if(resultData) {
         alert('Contacts Created!');
         this.router.navigateByUrl('/contacts',{

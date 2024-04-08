@@ -17,7 +17,7 @@
   display: flex;
   
   background: linear-gradient(135deg, #5D457A , #9C78C8);
-
+  position: relative;
   flex-direction: column;
   height: 90%;
   width: 40%;
@@ -43,4 +43,10 @@ img {
     justify-content: center;
     color: white;
     background: linear-gradient(to top left, rgb(100, 60, 83),white);
+}
+
+.buttonback {
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }

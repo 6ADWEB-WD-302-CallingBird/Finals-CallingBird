@@ -13,7 +13,7 @@ const routes: Routes = [
   path: 'aboutus', component:AboutusComponent
   },
   {
-    path: 'updatecontact', component:UpdatecontactComponent
+    path: 'updatecontact/:id', component:UpdatecontactComponent
   },
   {
     path:'addcontact',component:AddcontactComponent

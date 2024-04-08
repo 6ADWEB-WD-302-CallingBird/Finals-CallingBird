@@ -47,9 +47,9 @@
 
 .card {
   display: flex;
-  
+  position: relative;
   background: linear-gradient(135deg, #5D457A , #9C78C8);
-
+  position: relative;
   flex-direction: column;
   height: 90%;
   width: 40%;
@@ -65,4 +65,10 @@
 
 img {
   height: 10%;
+}
+
+.buttonback {
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }

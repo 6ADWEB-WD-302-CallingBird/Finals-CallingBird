@@ -8,7 +8,7 @@ var express = require('express'),
     //express app
     const app = express();
  
-    app.use(cors());
+    app.use(cors()); //removes cors restriction
     
     //mongoose connection
     mongoose.set('strictQuery',false)

@@ -43,6 +43,7 @@ var findUserControllerFn = async (req,res) => {
         console.log(error)
     }
 }
+
 var findOneUserControllerFn = async (req,res) => {
     try {
          result = await userService.findOneService(req.params.email)

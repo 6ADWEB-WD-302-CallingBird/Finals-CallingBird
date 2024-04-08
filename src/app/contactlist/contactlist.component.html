@@ -4,7 +4,39 @@
     <div class="links"><a href="/contacts">Contacts</a><a href="/addcontact">Add Contact</a> <a (click)="logout()">Logout</a></div>
 </div>
 
-<div class="contactcontents"></div>
+<div class="contactcontents">
+
+    <mat-form-field class="inputs">
+        <mat-label>Filter</mat-label>
+        <input matInput type="text" [(ngModel)]="filter">
+      </mat-form-field>
+      <h1>
+        Contact List
+      </h1>
+      <br>
+
+      <div class="gridcontainer" >
+        <div class="gridcard" *ngFor="let contact of contactlist.contactList  | filter: filter; let i = index" >
+
+            <div class="gridcardlogo"><img src="../../assets/birdnobg.png"></div>
+            <div class="gridcarddetails" >
+                <h3>Name</h3>
+                {{contact.contactname}} <br>
+                <br> 
+                <h3>Number</h3>
+                {{contact.contactnumber}} <br> <br>
+                <h3>Email</h3> 
+                {{contact.contactemail}} 
+
+            </div> <br>
+
+            <div> <button mat-flat-button color="primary" routerLink="/updatecontact/{{contact._id}}" >Update Contact</button> &nbsp; &nbsp;  <button mat-flat-button color="basic" (click)="delete(contact._id,i)">Delete Contact</button></div>
+            
+        </div>     
+    
+    </div>
+
+</div>
 
 </div>
 

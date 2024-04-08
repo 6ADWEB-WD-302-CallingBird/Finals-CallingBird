@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -16,8 +16,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { AddcontactComponent } from './addcontact/addcontact.component';
 import { UpdatecontactComponent } from './updatecontact/updatecontact.component';
 import { ContactlistComponent } from './contactlist/contactlist.component';
-
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import { NgxSearchFilterModule } from 'ngx-search-filter';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,11 @@ import { ContactlistComponent } from './contactlist/contactlist.component';
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatGridListModule,
+    NgxSearchFilterModule
+
+  
   ],
   providers: [
     provideClientHydration()
